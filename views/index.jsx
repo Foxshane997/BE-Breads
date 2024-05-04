@@ -5,7 +5,7 @@ const { title } = require('process')
 
 function Index ({breads, title})  {
     return (
-        <Default title={title}>
+        <Default title = {title}>
         <h2>Index Page</h2>
         <ul>
         {
@@ -24,9 +24,5 @@ function Index ({breads, title})  {
       
     )
 }
-
-
-
-
 
 module.exports = Index
