@@ -1,3 +1,11 @@
 # BE-Breads
-Code Along (be-3-intro-to-server-side-rendering)
-Express Full CRUD with SSR JSX
+To clone repo run "npm install"
+
+# To start server
+run "nodemon" http://localhost:3003/
+
+# To see all breeds
+http://localhost:3003/breads
+
+# To see breeds
+http://localhost:3003/breads/1
