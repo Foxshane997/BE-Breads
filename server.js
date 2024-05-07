@@ -17,16 +17,14 @@ app.get('/', (req, res) => {
     res.send('Welcome to an Awesome App about Breads')
   })
 
-  // 404 Page
-app.get('*', (req, res) => {
-  res.send('404')
-})
-
-  
 // Breads
   const breadsController = require('./controllers/breads_controller.js')
   app.use('/breads', breadsController)
   
+// 404 Page - Always at the end of the route order
+app.get('*', (req, res) => {
+  res.send('error404')
+})
 
 // Listener
 app.listen(PORT, () => {
