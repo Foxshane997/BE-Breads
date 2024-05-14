@@ -10,12 +10,11 @@ const breadSchema = new Schema ({
     Image: { type: String, default: 'https://images.pexels.com/photos/745988/pexels-photo-745988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
 })
 
-// Model
+// Model & Exporting Bread
 const Bread = mongoose.model('Bread', breadSchema)
-
-// Exporting Bread
 module.exports = Bread
 
+/* Old hard coded data */
 // module.exports = [
 //     {
 //       name: 'Rye',
