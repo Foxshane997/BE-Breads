@@ -7,7 +7,11 @@ const { Schema } = mongoose
 const breadSchema = new Schema ({
     name: { type: String, required: true},
     hasGluten: Boolean,
-    Image: { type: String, default: 'https://images.pexels.com/photos/745988/pexels-photo-745988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
+    Image: { type: String, default: 'https://images.pexels.com/photos/745988/pexels-photo-745988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},
+    baker: {
+        type: String,
+        enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Pheobe']
+    }
 })
 
 // Model & Exporting Bread

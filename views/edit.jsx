@@ -6,20 +6,29 @@ function Edit ({bread}) {
       <Default>
         <h2>Add a new bread</h2>
           <form action={`/breads/${bread.id}?_method=PUT`} method="POST"> 
-          <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
             id="name"
             required
             value={bread.name}
-          />
-          <label htmlFor="image">Image</label>
-          <input
+            />
+        <label htmlFor="image">Image</label>
+            <input
             type="text"
             name="image"
             id="image"
             />
+        <label htmlFor="baker">Baker</label>
+            <select name="baker" id="baker" defaultValue={bread.baker}>
+            <option value="Rachel">Rachel</option>
+            <option value="Monica">Monica</option>
+            <option value="Joey">Joey</option>
+            <option value="Chandler">Chandler</option>
+            <option value="Ross">Ross</option>
+            <option value="Phoebe">Phoebe</option>
+            </select>
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
             type="checkbox"
