@@ -5,7 +5,7 @@ const { Schema } = mongoose
 // Schema
 const bakerSchema = new Schema ({
     name: {
-        type: String.apply,
+        type: String,
         required: true,
         enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Ross', 'Phoebe']
     },
