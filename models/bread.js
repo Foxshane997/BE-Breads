@@ -11,18 +11,18 @@ const breadSchema = new Schema({
     image: { type: String, default: 'http://placehold.it/500x500.png' },
     baker: {
       type: Schema.Types.ObjectID,
-      ref: 'Baker'
+      ref: 'baker'
     }
 })
-// Changed data at 10:05 ^
 
-// Instance Method
-breadSchema.methods.getBakedBy = function() {
-    return `${this.name} was baked with love by ${this.baker}`
-}
+// Instance Helper Method
+breadSchema.methods.getBakedBy = function(){
+    return `${this.name} was baked with love by ${this.baker.name}, who has been with us since ${this.baker.startDate.getFullYear()}`
+  }
 
 // Model & Exporting Bread
 const Bread = mongoose.model('Bread', breadSchema)
 module.exports = Bread
 
+  
   
