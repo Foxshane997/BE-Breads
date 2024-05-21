@@ -7,8 +7,8 @@ const Baker = require('../models/baker.js')
 
 // Index Route - Using Async
 breads.get('/', async (req, res) => {
-  const foundBakers = await Baker.find()
-  const foundBreads = await Bread.find().limit(10) /* Change this for amount shown */
+  const foundBakers = await Baker.find().lean()
+  const foundBreads = await Bread.find().limit(10).lean()
   res.render('index', {
     breads: foundBreads,
     bakers: foundBakers,
