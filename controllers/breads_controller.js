@@ -5,23 +5,18 @@ const Bread = require('../models/bread.js')
 const { title } = require('process')
 const Baker = require('../models/baker.js')
 
-// Index
-breads.get('/', (req, res) => {
-  Baker.find()
-    .then(foundBakers => {
-      Bread.find()
-      .then(foundBreads => {
-          res.render('index', {
-              breads: foundBreads,
-              bakers: foundBakers,
-              title: 'Index Page'
-          })
-      })
-    })
+// Index Route
+breads.get('/', async (req, res) => {
+  const foundBakers = await Baker.find()
+  const foundBreads = await Bread.find()
+  res.render('index', {
+    breads: foundBreads,
+    bakers: foundBakers,
+    title: 'Index Page'
+  })
 })
 
-
-// NEW Route
+// New Route
 breads.get('/new', (req, res) => {
   Baker.find()
       .then(foundBakers => {
@@ -31,7 +26,7 @@ breads.get('/new', (req, res) => {
     })
 })
 
-// SHOW Route
+// Show Route
 // breads.get('/:id', (req, res) => {
 //   Bread.findById(req.params.id)
 //       .then(foundBread => {
@@ -57,7 +52,7 @@ breads.get('/:id', (req, res,) => {
       })
 })
 
-// CREATE
+// Create
 breads.post('/', (req, res) => {
   if(!req.body.image) {
       req.body.image = undefined 
@@ -99,7 +94,7 @@ breads.get('/:id/edit', (req, res) => {
     })
 })
 
-// DELETE
+// Delete Route
 breads.delete('/:id', (req, res) => {
   Bread.findByIdAndDelete(req.params.id) 
     .then(deletedBread => { 
@@ -111,6 +106,4 @@ module.exports = breads
 
 // req.body.image = 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
 
-
-// EDIT
 
