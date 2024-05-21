@@ -26,6 +26,12 @@ bakerSchema.virtual('breads', {
     foreignField: 'baker'
 })
 
+// Hooks Schema
+bakerSchema.post('findOneAndDelete', function(){
+    console.log(this)
+})
+// Might Break with 'this' in there ^
+
 // Model & Export
 const Baker = mongoose.model('baker', bakerSchema)
 module.exports = Baker
