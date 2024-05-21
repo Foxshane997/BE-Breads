@@ -5,10 +5,10 @@ const Bread = require('../models/bread.js')
 const { title } = require('process')
 const Baker = require('../models/baker.js')
 
-// Index Route
+// Index Route - Using Async
 breads.get('/', async (req, res) => {
   const foundBakers = await Baker.find()
-  const foundBreads = await Bread.find()
+  const foundBreads = await Bread.find().limit(10) /* Change this for amount shown */
   res.render('index', {
     breads: foundBreads,
     bakers: foundBakers,
