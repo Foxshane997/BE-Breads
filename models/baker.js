@@ -27,10 +27,12 @@ bakerSchema.virtual('breads', {
 })
 
 // Hooks Schema
-bakerSchema.post('findOneAndDelete', function(){
-    console.log(this)
-})
-// Might Break with 'this' in there ^
+bakerSchema.post('findOneAndDelete', function() {
+    Bread.deleteMany({ baker: this._conditions._id })
+        .then(deleteStatus => {
+            console.log(deleteStatus)
+        })
+  })
 
 // Model & Export
 const Baker = mongoose.model('baker', bakerSchema)
