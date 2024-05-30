@@ -1,6 +1,9 @@
 {
   "name": "be-breads",
   "version": "1.0.0",
+  "engines": {
+    "node": "20.12.2"
+  },
   "description": "Code Along (be-3-intro-to-server-side-rendering)\r Express Full CRUD with SSR JSX",
   "main": "server.js",
   "scripts": {
