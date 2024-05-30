@@ -5,9 +5,9 @@
     "node": "20.12.2"
   },
   "description": "Code Along (be-3-intro-to-server-side-rendering)\r Express Full CRUD with SSR JSX",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
