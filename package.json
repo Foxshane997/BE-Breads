@@ -7,7 +7,6 @@
   "description": "Code Along (be-3-intro-to-server-side-rendering)\r Express Full CRUD with SSR JSX",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
